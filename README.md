@@ -15,7 +15,7 @@ The project follows a strict branching strategy:
 
 ---
 
-## 🛠️ Step 2: Model Development & CI/CD (`dev` branch)
+##  Step 2: Model Development & CI/CD (`dev` branch)
 
 The model training and evaluation are handled in the `dev` branch:
 * **`train.py`**: Loads the Olivetti faces dataset from `sklearn.datasets`, splits it into 70% train and 30% test sets, trains a `DecisionTreeClassifier`, and saves the model using `joblib` to `savedmodel.pth`.
@@ -36,7 +36,7 @@ python test.py
 
 ---
 
-## 🐳 Step 3: Containerization & Deployment (`docker_cicd` branch)
+##  Step 3: Containerization & Deployment (`docker_cicd` branch)
 
 The application is containerized and deployed using Kubernetes in the `docker_cicd` branch:
 * **`app.py`**: A Flask web application that serves a simple HTML page to upload images, preprocesses them (grayscale, resize to 64x64, flatten), and outputs the predicted face class.
@@ -63,7 +63,7 @@ kubectl port-forward svc/mlops-app-service 30007:80
 
 ---
 
-## 🛡️ Self-Healing Demonstration
+## Self-Healing Demonstration
 
 To ensure that 3 replicas are always running, a pod can be deleted using `kubectl delete pod <pod-name>`. Kubernetes will immediately spin up a replacement pod to maintain the desired count of 3 replicas.
 
