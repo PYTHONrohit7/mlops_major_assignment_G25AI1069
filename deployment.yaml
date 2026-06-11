@@ -17,9 +17,8 @@ spec:
       containers:
       - name: mlops-app
         # We will update this image name to your docker hub image once you push it
-        image: mlops-app:latest
-        # Set imagePullPolicy to Never or IfNotPresent for local testing if not pushed
-        imagePullPolicy: IfNotPresent
+        image: rohitpaliwal4/mlops-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
 
